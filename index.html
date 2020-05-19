@@ -1,12 +1,4 @@
 
-<! This little bit of code started with https://www.wikihow.com/Create-a-Questionnaire-in-HTML and got modified, by then using info from w3schools.com to continue.
-
-This is an UGLY survey....  PLEASE MODIFY IT!
-
-Caroline Barrière
-May 2020
-
->
 
 <!DOCTYPE html>
 <html>
@@ -18,59 +10,100 @@ May 2020
   </head>
   
   <body>
-	<h1>Survey</h1>
+	<h1 class="rainbow-title">Amin's Awesome Survey Page</h1>
 	<form id="myform" action="index.php" >
-	<br>
-	<br>
-	<! Choose a website to evaluate >
-	<h3><i>This is a terribly ugly page... please modify it!</i></h3>
-	<h2>What do you think of the UI in this <a href="http://Provigo.ca">Provigo</a> site?</h2>	
-	<br>
-	<br>
-	<! You should make your image clickable>
-	<img src="images/Provigo-FrontPage.JPG" alt="http://Provigo.ca" width="450" height="300">
-	<br>
-	<br>
-	<div class="question">
-	<h2> Personal Information </h2>
-	<p>First name: <input type="text" name="firstname"></p>
-	<p>Last name: <input type="text" name="lastname"></p>
-	<br>
-	<br>
-		
-	</div>	
-		
-	<div class="question">
-		<h2> What you like </h2>
-		I like:<br>
-		<input type="checkbox" name="Color" value="Red">Red<br>
-		<input type="checkbox" name="Color" value="Green">Green<br>
-		<input type="checkbox" name="Color" value="Blue">Blue<br>
-		
 		<br>
-		
-		What is your favorite fruit?<br>
-		<select id="favorite">
-			<option value="Apples" selected="selected">Apples</option>
-			<option value="Oranges">Oranges</option>
-			<option value="Bananas">Bananas</option>
-		</select>
-	</div>
-	
+		<br>
+
+		<h3> This is an incredible page, if only apple could make a website like this </h3>
+		<h2> Go look at <a href="https://www.apple.com/ca/">Apple's</a> UI, they need better engineers, maybe from UOttawa?</h2>
+		<br>
+		<br>
+		<! You should make your image clickable>
+		<a href="https://www.apple.com/ca/">
+			<img src="images/appleFrontPage.PNG" alt="https://www.apple.com/ca/" width="450" height="300">
+		</a>
+
+		<br>
+		<br>
+
+		<div class="question">
+			<h2> Personal Information </h2>
+			<p>First name: <input type="text" name="firstname"></p>
+			<p>Last name: <input type="text" name="lastname"></p>
+
+
+
+			<h2> What do you like most about apple's website </h2>
+			<input type="radio" name="Color" value="Smooth">The smooth transitions<br>
+			<input type="radio" name="Color" value="Simple">The simplicity of the website<br>
+			<input type="radio" name="Color" value="Coherance">The coherance of the website<br>
+
+
+
+			<h2>Quel buts est-ce que le website accomplie le mieux</h2>
+			<select id="favorite">
+				<option value="FC" selected="selected">Fonctionnement Correct</option>
+				<option value="Coherencee">Coherence</option>
+				<option value="Efficacite">Efficacité</option>
+				<option value="Utilisabilite">Utilisabilité</option>
+				<option value="Fiabilite">Fiabilité</option>
+				<option value="Securite">Securité</option>
+			</select>
+
+
+
+			<h2>Quel page vous préférée? </h2>
+			Vous pouvez choisir plus qu'un (avec ctrl)<br>
+			<select size="5" multiple>
+  				<option value="Mac">Mac</option>
+  				<option value="iPad">iPad</option>
+				<option value="iPhone">iPhone</option>
+ 				<option value="Watch">Watch</option>
+				<option value="TV">TV</option>
+  				<option value="Music">Music</option>
+  				<option value="Support">Support</option>
+			</select>
+
 	<br>
+
+	<h2>Comments:</h2>
+		<textarea rows="5" cols="30"></textarea>
+		<br>
+		<br>
+
+		<div class="likert-question">
+		<h3>Est-ce que le site web d'Apple est bon en considerant les six buts appris en class?</h3>
+    		<ul class='likert'>
+      			<li>
+        			<input type="radio" name="likert" value="strong_agree">
+        			<label>Fortement en accord</label>
+      			</li>
+      			<li>
+        			<input type="radio" name="likert" value="strong_agree">
+        			<label>D'accord</label>
+      			</li>
+      			<li>
+        			<input type="radio" name="likert" value="strong_agree">
+        			<label>Neutre</label>
+      			</li>
+      			<li>
+        			<input type="radio" name="likert" value="disagree">
+        			<label>désaccord</label>
+      			</li>
+      			<li>
+        			<input type="radio" name="likert" value="strong_agree">
+        			<label>Fortement en désaccord</label>
+      			</li>
+    		</ul>
+		</div>
 	<br>
-		
-	Comments:<br>
-	<textarea rows="5" cols="30"></textarea>
-			
-	<br>
-	<br>
-			
+		</div>
 	<button id="submitButton" type="button" class="block">
 		SUBMIT your questionnaire
 	</button>
 		
-	<p id="signature">Site created by Caroline Barrière</p>	
+	<p id="signature">Site created by Amin Saber</p>
 	
 	</form>
   </body>
