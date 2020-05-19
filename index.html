@@ -10,13 +10,13 @@
   </head>
   
   <body>
-	<h1 class="rainbow-title">Amin's Awesome Survey Page</h1>
+	<h1>Sondage Spectaculair d'Amin</h1>
 	<form id="myform" action="index.php" >
 		<br>
 		<br>
 
-		<h3> This is an incredible page, if only apple could make a website like this </h3>
-		<h2> Go look at <a href="https://www.apple.com/ca/">Apple's</a> UI, they need better engineers, maybe from UOttawa?</h2>
+		<h3> Ceci est une page incroyable, si seulement Apple pouvait créer un site Web comme celui-ci </h3>
+		<h3> Allez voir <a href="https://www.apple.com/ca/">Apple's</a> site web, ils ont besoin de meilleurs ingénieurs, peut-être de l'Université d'Ottawa?</h3>
 		<br>
 		<br>
 		<! You should make your image clickable>
@@ -28,20 +28,20 @@
 		<br>
 
 		<div class="question">
-			<h2> Personal Information </h2>
-			<p>First name: <input type="text" name="firstname"></p>
-			<p>Last name: <input type="text" name="lastname"></p>
+			<h2> Information Personel </h2>
+			<p>Prénom: <input type="text" name="firstname"></p>
+			<p>Nom de famille: <input type="text" name="lastname"></p>
 
 
 
-			<h2> What do you like most about apple's website </h2>
-			<input type="radio" name="Color" value="Smooth">The smooth transitions<br>
-			<input type="radio" name="Color" value="Simple">The simplicity of the website<br>
-			<input type="radio" name="Color" value="Coherance">The coherance of the website<br>
+			<h2> Qu'est-ce que vous aimez le mieux du site web d'apple </h2>
+			<input type="radio" name="Color" value="Smooth">Les transitions en douceur<br>
+			<input type="radio" name="Color" value="Simple">La simplicité du site<br>
+			<input type="radio" name="Color" value="Coherance">La cohérence du site internet<br>
 
 
 
-			<h2>Quel buts est-ce que le website accomplie le mieux</h2>
+			<h2>Quel but est-ce que le website accomplie le mieux</h2>
 			<select id="favorite">
 				<option value="FC" selected="selected">Fonctionnement Correct</option>
 				<option value="Coherencee">Coherence</option>
@@ -51,11 +51,19 @@
 				<option value="Securite">Securité</option>
 			</select>
 
-
+			<h2>Quel serait le meilleur type d'evaluations pour ce site web</h2>
+			<select id="favorite">
+				<option value="Rapport de problèmes" selected="Rapport de problèmes">Rapport de problèmes</option>
+				<option value="Analyse de logs">Analyse de logs</option>
+				<option value="Expériences scientifiques">Expériences scientifiques</option>
+				<option value="Observations d'usagers">Observations d'usagers</option>
+				<option value="Sondages">Sondages</option>
+				<option value="tests d'utilisabilité">tests d'utilisabilité</option>
+			</select>
 
 			<h2>Quel page vous préférée? </h2>
 			Vous pouvez choisir plus qu'un (avec ctrl)<br>
-			<select size="5" multiple>
+			<select size="7" multiple>
   				<option value="Mac">Mac</option>
   				<option value="iPad">iPad</option>
 				<option value="iPhone">iPhone</option>

@@ -15,7 +15,7 @@ h1 {
 
 body {
   background-color: deepskyblue;
-  width: 600px;
+  width: 800px;
   border: 2px solid black;
   padding: 0px 20px 20px 20px;
   
@@ -38,8 +38,8 @@ table {
 
 /* Defining styling for a specific element type - each question */
 .question {
-  background-image: linear-gradient(salmon, deepskyblue);
-  color: white;
+  background-image: linear-gradient(skyblue, deepskyblue);
+  color: black;
   margin: 20px;
   padding: 20px;
 }
@@ -54,12 +54,6 @@ table {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
-}
-
-.rainbow-title{
-  background-image: linear-gradient(to left, violet, indigo, blue, yellow, orange, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Defining styling for a specific element with an id */
