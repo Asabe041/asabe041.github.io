@@ -29,16 +29,19 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
+function populateListProductChoices(slct1, slct2, slct3) {
 	
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
+	var s3 = document.getElementById(slct3);
 	var opts =[], opt;
-	var needToCheck= ['Vegetarian','GlutenFree','organic'];
+	var needToCheck= ['Vegetarian','GlutenFree','organic','None'];
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
+	s3.innerHTML = "";
+	
 	//code pour ce loop inspire de https://www.dyn-web.com/tutorials/forms/select/multi-selected.php
-	for (var i=0; i < 3; i++){
+	for (var i=0; i < 4; i++){
 		opt = document.getElementById(needToCheck[i]).checked;
 		if(opt){
 			opts.push(needToCheck[i]);
@@ -46,8 +49,9 @@ function populateListProductChoices(slct1, slct2) {
 	} 
 	var optionArray;
 	
-	if(opts.length ==0){
-		optionArray = restrictListProducts(products, "None");
+	if(opts.length == 0){
+		opts.push('None');
+		optionArray = restrictListProducts(products, opts[0]);
 	}
 	if(opts.length == 1){
 		optionArray = restrictListProducts(products, opts[0]);
@@ -65,18 +69,34 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productArray[0];
-		s2.appendChild(checkbox);
-		
-		// create a label for the checkbox, and also add in HTML DOM
-		var label = document.createElement('label')
+
+		var label = document.createElement('label');
 		label.htmlFor = productArray[0];
 		label.appendChild(document.createTextNode(productArray[0]+ '  ' + productArray[1]));
-		s2.appendChild(label);
+		
+		var image = document.createElement('img');
+		image.src = "images/"+productArray[0]+'.jpg';
+		image.width = '100';
+		image.height = '100';
+		
+		if(productArray[2] == 'true'){
+			s3.appendChild(checkbox);
+			s3.appendChild(label);
+			s3.appendChild(image);
+			s3.appendChild(document.createElement("br"));
+		}
+		else{
+			s2.appendChild(checkbox);
+			s2.appendChild(label);
+			s2.appendChild(image);
+			s2.appendChild(document.createElement("br")); 
+		}
+		
 		
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br")); 
+		
+		 
 	}
-	console.log("HI");
 	openInfo(event, 'Products');
 }
 	

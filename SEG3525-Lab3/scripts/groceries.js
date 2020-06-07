@@ -8,6 +8,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
+		fruit:true,
 		price: 0.99
 	},
 	{
@@ -15,6 +16,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
+		fruit: true,
 		price: 1.49
 	},
 	{
@@ -22,6 +24,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
+		fruit: true,
 		price: 1.99
 	},
 	{
@@ -29,13 +32,15 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
+		fruit: false,
 		price: 2.35
 	},
 	{
-		name: "brocoli",
+		name: "broccoli",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
+		fruit: false,
 		price: 2.49
 	},
 	{
@@ -43,13 +48,15 @@ var products = [
 		vegetarian: false,
 		glutenFree: false,
 		organic: false,
+		fruit: false,
 		price: 2.99
 	},
 	{
-		name: "beyond-meat burger",
+		name: "beyond meat",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
+		fruit: false,
 		price: 8.99
 	},
 	{
@@ -57,6 +64,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
+		fruit: false,
 		price: 10.00
 	},
 	{
@@ -64,6 +72,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
+		fruit: false,
 		price: 10.99
 	},
 	{
@@ -71,6 +80,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: false,
 		organic: false,
+		fruit: false,
 		price: 14.99
 	}
 ];
@@ -82,19 +92,40 @@ var products = [
 
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
-	
+	console.log(restriction);
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name + ',' + prods[i].price);
+			if(prods[i].fruit == true){
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+			}
+			else{
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+			}
+			
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name + ',' + prods[i].price);
+			if(prods[i].fruit == true){
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+			}
+			else{
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+			}
 		}
 		else if ((restriction == "organic") && (prods[i].organic== true)){
-			product_names.push(prods[i].name + ',' + prods[i].price);
+			if(prods[i].fruit == true){
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+			}
+			else{
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+			}
 		}
 		else if (restriction == "None"){
-			product_names.push(prods[i].name + ',' + prods[i].price);
+			if(prods[i].fruit == true){
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+			}
+			else{
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+			}
 		}
 	}
 	return product_names;
@@ -109,7 +140,12 @@ function restrictMultipleListProducts(prods, restriction) {
 			//vege and gluten 
 			if ((restriction[0] == "Vegetarian") && (prods[i].vegetarian == true)){
 				if((restriction[1] == "GlutenFree") && (prods[i].glutenFree == true)){
-					product_names.push(prods[i].name + ',' + prods[i].price);
+					if(prods[i].fruit == true){
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+					}
+					else{
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+					}
 				}
 			}
 		}
@@ -117,7 +153,12 @@ function restrictMultipleListProducts(prods, restriction) {
 			//vege and organic
 			if ((restriction[0] == "Vegetarian") && (prods[i].vegetarian == true)){
 				if((restriction[1] == "organic") && (prods[i].organic == true)){
-					product_names.push(prods[i].name + ',' + prods[i].price);
+					if(prods[i].fruit == true){
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+					}
+					else{
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+					}
 				}
 			}
 		}
@@ -125,7 +166,12 @@ function restrictMultipleListProducts(prods, restriction) {
 		//gluten and organic
 			if((restriction[0] == "GlutenFree") && (prods[i].glutenFree == true)){
 				if((restriction[1] == "organic") && (prods[i].organic == true)){
-					product_names.push(prods[i].name + ',' + prods[i].price);
+					if(prods[i].fruit == true){
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+					}
+					else{
+						product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+					}
 				}
 			}
 		}
@@ -134,13 +180,23 @@ function restrictMultipleListProducts(prods, restriction) {
 			if ((restriction[0] == "Vegetarian") && (prods[i].vegetarian == true)){
 				if((restriction[1] == "GlutenFree") && (prods[i].glutenFree == true)){
 					if ((restriction[2] == "organic") && (prods[i].organic== true)){
-						product_names.push(prods[i].name + ',' + prods[i].price);
+						if(prods[i].fruit == true){
+							product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+						}
+						else{
+							product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+						}
 					}
 				}
 			}
 		}
 		else if (restriction == "None"){
-			product_names.push(prods[i].name + ',' + prods[i].price);
+			if(prods[i].fruit == true){
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + true);
+			}
+			else{
+				product_names.push(prods[i].name + ',' + prods[i].price + ',' + false);
+			}
 		}
 	}
 	return product_names;

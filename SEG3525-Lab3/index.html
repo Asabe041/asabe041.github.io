@@ -36,7 +36,10 @@
 	<input type="checkbox" id="organic"  value="organic">
 	<label for="organic">Organic</label><br>
 	
-	<button id="dietSelect" onclick="populateListProductChoices(this.id, 'displayProduct')">Next</button>
+	<input type="checkbox" id="None"  value="None">
+	<label for="None">None</label><br>
+	
+	<button id="dietSelect" onclick="populateListProductChoices(this.id, 'displayProduct', 'displayFruits')">Next</button>
 	</form>
 </div>
 
@@ -44,9 +47,20 @@
   <h3>Your targeted products</h3>
   <p>We selected products based on your food preferences</p>
 	 <p>Choose items to buy:</p>
-	 <div id="displayProduct"></div>
+	 
+	 <p>Fruits:</p>
+	 <div id="displayFruits">
+	 
+	 </div>
+	 
+	 <p>Others:</p>
+	 <div id="displayProduct">
+	 
+	 </div>
+	 
+	 
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
+		<p>Add selected items to cart.</p>
 	</button>
 </div>
 
