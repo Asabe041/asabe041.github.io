@@ -83,33 +83,36 @@
                     <div class="card-body">
                         <div class="row">
                             <div id="column" class="column">
-                                <div class="card bg-warning" style="width:230px;height:400px">
+                                <div class="card bg-warning" style="width:230px;height:450px">
                                     <img class="card-img-top" src="images/Erwind.jpg" alt="Card image" style="width:100%; height:200px">
                                     <div class="card-body">
                                         <h4 class="card-title">Erwind</h4>
                                         <p class="card-text">Erwind will make all your bike's problems go.</p>
+                                        <p class="card-text">Monday-Wednesday</p>
                                         <!--Code inspired from https://getbootstrap.com/docs/4.3/components/collapse/-->
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseService" role="button">Choose me!</a>
+                                        <a class="btn btn-primary" id="Erwind" data-toggle="collapse" href="#collapseService" onclick="changeDates(this.id)" role="button">Choose me!</a>
                                         </div>
                                 </div>
                             </div>
                             <div id="column" class="column">
-                                <div class="card bg-warning" style="width:230px;height:400px">
+                                <div class="card bg-warning" style="width:230px;height:450px">
                                     <img class="card-img-top" src="images/Jane.jpg" alt="Card image" style="width:100%; height:200px">
                                     <div class="card-body">
                                         <h4 class="card-title">Jane</h4>
                                         <p class="card-text">Jane will take good care of your bike.</p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseService" role="button">Choose me!</a>
+                                        <p class="card-text">Monday-Friday</p>
+                                        <a class="btn btn-primary" id="Jane" data-toggle="collapse" href="#collapseService" onclick="changeDates(this.id)" role="button">Choose me!</a>
                                     </div>
                                 </div>
                             </div>
                             <div id="column" class="column">
-                                <div class="card bg-warning" style="width:230px;height:400px">
+                                <div class="card bg-warning" style="width:230px;height:450px">
                                     <img class="card-img-top" src="images/Albert.jpg" alt="Card image" style="width:100%; height:200px">
                                     <div class="card-body">
                                         <h4 class="card-title">Albert</h4>
                                         <p class="card-text">Albert will fix your bike right up.</p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseService" role="button">Choose me!</a>
+                                        <p class="card-text">Tuesday-Thursday</p>
+                                        <a class="btn btn-primary" id="Albert" data-toggle="collapse" href="#collapseService" onclick="changeDates(this.id)" role="button">Choose me!</a>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +177,7 @@
                                 <div class="form-group row">
                                     <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                                        <p> <input type="text" id="datepicker"></p>
                                     </div>
                                     
                                 </div>
@@ -205,6 +208,9 @@
                                               <input type="text" id="fname" name="firstname" placeholder="John Doe">
                                               <label for="email"><i class="fa fa-envelope"></i> Email</label>
                                               <input type="text" id="email" name="email" placeholder="john@example.com">
+                                              <label for="phone"><i class="fa fa-phone"></i> Cell Phone Number</label>
+                                              <input type="text" id="phone" name="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Phone Number" placeholder="613-123-4567">
+
                                               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
                                               <input type="text" id="adr" name="address" placeholder="111 Wellington St">
                                               <label for="city"><i class="fa fa-institution"></i> City</label>
@@ -229,12 +235,12 @@
                                                 <i class="fa fa-cc-visa" style="color:navy;"></i>
                                                 <i class="fa fa-cc-amex" style="color:blue;"></i>
                                                 <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                                <i class="fa fa-cc-discover" style="color:orange;"></i>
                                               </div>
                                               <label for="cname">Name on Card</label>
                                               <input type="text" id="cname" name="cardname" placeholder="John More Doe">
                                               <label for="ccnum">Credit card number</label>
-                                              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                              <!--code for pattern inspired from http://html5pattern.com/Cards-->
+                                              <input type="text" id="ccnum" name="cardnumber" pattern="[0-9]{13,16}" title="Credit card" placeholder="1111222233334444">
                                               <label for="expmonth">Exp Month</label>
                                               <input type="text" id="expmonth" name="expmonth" placeholder="September">
                                               <div class="row">
@@ -258,11 +264,14 @@
                                     </div>
                                     <div class="col-25">
                                       <div class="container">
-                                        <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+                                        <h4>Service Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
                                         <div id="cartItems">
                                         </div>
                                         <hr>
                                         <p>Total<span class="price" style="color:black"><b id="total"></b></span></p>
+                                      </div>
+                                      <div class="container">
+                                       <p>Please cancel any appointments 48 hours. In case of failure to do so the credit card given will be charged half the cost of the service.<p>
                                       </div>
                                     </div>
                                   </div>
