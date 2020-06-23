@@ -37,6 +37,39 @@
       </select>
       <br>
       <br>
+      <h2> What's your favorite meat?</h2>
+			<input type="radio" name="meat" value="Pork">Pork<br>
+			<input type="radio" name="meat" value="Cow">Cow<br>
+      <input type="radio" name="meat" value="Chicken">Chicken<br>
+      <input type="radio" name="meat" value="Fish">Fish<br>
+      <br>
+      <h2>What is your favorite type of Music?</h2>
+      You can chose multiple answers with ctrl.
+      <br>
+			<select name="music" size="7" multiple>
+  				<option name="music" value="Rock">Rock</option>
+  				<option name="music" value="Pop">Pop</option>
+			  	<option name="music" value="Hip-Hop">Hip-Hop</option>
+ 				  <option name="music" value="Rap">Rap</option>
+				  <option name="music" value="Country">Country</option>
+  				<option name="music" value="Dubstep">Dubstep</option>
+			</select>
+      <br>
+      <br>
+      <!-- code inspired from https://www.geeksforgeeks.org/html-design-form/ -->
+      <h2>What is your favorite subject in school</h2> 
+      <input type="checkbox" name="subject" value="Math" id="math"> 
+      <label for="math">Math</label> 
+      <input type="checkbox" name="subject" value="History" id="history"> 
+      <label for="history">History</label> 
+      <input type="checkbox" name="subject" value="Science" id="science"> 
+      <label for="science">Science</label>
+      <input type="checkbox" name="subject" value="Programming" id="programming"> 
+      <label for="programming">Programming</label>  
+      <input type="checkbox" name="subject" value="English" id="english"> 
+      <label for="english">English</label> 
+      <br>
+      <br>
       <button type="submit" class="btn btn-warning" id="bb">Submit</button>
       <p id="thanks"></p>
     </form>

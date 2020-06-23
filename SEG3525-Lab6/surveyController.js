@@ -45,8 +45,11 @@ module.exports = function(app){
         var color = readData("color");
         var fruit = readData("fruit");
         var animal = readData("animal");
-        res.render('showResults', {results: [color, fruit, animal]});
-        console.log([color, fruit, animal]);
+        var meat = readData("meat");
+        var music = readData("music");
+        var subject = readData("subject");
+        res.render('showResults', {results: [color, fruit, animal, meat, music, subject]});
+        console.log([color, fruit, animal, meat, music, subject]);
     });
 
     // when a user goes to localhost:3000/niceSurvey
@@ -60,11 +63,12 @@ module.exports = function(app){
     // will be recuperated here, parsed and used to update the data files
     app.post('/niceSurvey', urlencodedParser, function(req, res){
         console.log(req.body);
+        console.log("_______________");
         var json = req.body;
         for (var key in json){
             console.log(key + ": " + json[key]);
             // in the case of checkboxes, the user might check more than one
-            if ((key === "color") && (json[key].length === 2)){
+            if ((key === "color" || key === "music" || key === "subject" ) && (typeof json[key] == "object")){
                 for (var item in json[key]){
                     combineCounts(key, json[key][item]);
                 }
