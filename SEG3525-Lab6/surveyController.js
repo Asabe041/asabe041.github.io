@@ -43,15 +43,14 @@ module.exports = function(app){
     // serve a template (ejs file) which will include the data from the data files
     app.get('/analysis', function(req, res){
         
-        var firstName = readData("firstName");
-        var lastName = readData("lastName");
+        var name = readData("name");
         var color = readData("color");
         var rating = readData("rating");
         var product = readData("product");
         var price = readData("price");
         var own = readData("own");
-        res.render('showResults', {results: [firstName, lastName, color, rating, product, price, own]});
-        console.log([firstName, lastName, color, rating, product, price, own]);
+        res.render('showResults', {results: [name, color, rating, product, price, own]});
+        console.log([name, color, rating, product, price, own]);
     });
 
     // when a user goes to localhost:3000/niceSurvey
