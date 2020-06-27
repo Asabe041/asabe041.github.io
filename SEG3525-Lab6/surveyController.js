@@ -42,14 +42,16 @@ module.exports = function(app){
     // when a user goes to localhost:3000/analysis
     // serve a template (ejs file) which will include the data from the data files
     app.get('/analysis', function(req, res){
+        
+        var firstName = readData("firstName");
+        var lastName = readData("lastName");
         var color = readData("color");
-        var fruit = readData("fruit");
-        var animal = readData("animal");
-        var meat = readData("meat");
-        var music = readData("music");
-        var subject = readData("subject");
-        res.render('showResults', {results: [color, fruit, animal, meat, music, subject]});
-        console.log([color, fruit, animal, meat, music, subject]);
+        var rating = readData("rating");
+        var product = readData("product");
+        var price = readData("price");
+        var own = readData("own");
+        res.render('showResults', {results: [firstName, lastName, color, rating, product, price, own]});
+        console.log([firstName, lastName, color, rating, product, price, own]);
     });
 
     // when a user goes to localhost:3000/niceSurvey
@@ -68,7 +70,7 @@ module.exports = function(app){
         for (var key in json){
             console.log(key + ": " + json[key]);
             // in the case of checkboxes, the user might check more than one
-            if ((key === "color" || key === "music" || key === "subject" ) && (typeof json[key] == "object")){
+            if ((key === "color" || key === "own" || key === "product" ) && (typeof json[key] == "object")){
                 for (var item in json[key]){
                     combineCounts(key, json[key][item]);
                 }
